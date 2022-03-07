@@ -8,45 +8,44 @@ import NotificationIcon from './icons/NotificationIcon';
 import SearchIcon from './icons/SearchIcon';
 
 const Footer: FC = () => {
-  const router = useRouter();
-  const currentRoute = router.pathname;
+  const { pathname } = useRouter();
 
   return (
-    <footer className="flex items-center justify-between px-4 py-3 border-t">
+    <footer className="flex items-center justify-between  border-t">
       <Link href="/">
-        <a>
-          <HomeIcon isActive={currentRoute === '/'} className="p-px w-7 h-7" />
+        <a className="w-1/4 flex items-center justify-center p-3">
+          <HomeIcon isActive={pathname === '/'} className="p-px w-7 h-7" />
         </a>
       </Link>
       <Link href="/explore">
-        <a>
+        <a className="w-1/4 flex items-center justify-center p-3">
           <SearchIcon
-            isActive={currentRoute === '/explore'}
+            isActive={pathname === '/explore'}
             className="p-px w-7 h-7"
           />
         </a>
       </Link>
       <Link href="/communities">
-        <a>
+        <a className="w-1/4 flex items-center justify-center p-3">
           <CommunitiesIcon
-            isActive={currentRoute === '/communities'}
+            isActive={pathname === '/communities'}
             className="p-px w-7 h-7"
           />
         </a>
       </Link>
       <Link href="/notifications">
-        <a>
+        <a className="w-1/4 flex items-center justify-center p-3">
           <NotificationIcon
-            isActive={currentRoute === '/notifications'}
+            isActive={pathname === '/notifications'}
             className="p-px w-7 h-7"
           />
         </a>
       </Link>
       <Link href="/messages">
-        <a>
+        <a className="w-1/4 flex items-center justify-center p-3">
           <DMIcon
-            isActive={currentRoute === '/messages'}
-            className="p-px w-7 h-7"
+            isActive={pathname === '/messages'}
+            className="p-px w-7 h-7 active:bg-slate-300"
           />
         </a>
       </Link>
