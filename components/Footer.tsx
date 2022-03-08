@@ -11,14 +11,14 @@ const Footer: FC = () => {
   const { pathname } = useRouter();
 
   return (
-    <footer className="flex items-center justify-between  border-t">
+    <footer className="flex items-center justify-between border-t">
       <Link href="/">
-        <a className="w-1/4 flex items-center justify-center p-3">
+        <a className="flex items-center justify-center w-1/4 p-3">
           <HomeIcon isActive={pathname === '/'} className="p-px w-7 h-7" />
         </a>
       </Link>
       <Link href="/explore">
-        <a className="w-1/4 flex items-center justify-center p-3">
+        <a className="flex items-center justify-center w-1/4 p-3">
           <SearchIcon
             isActive={pathname === '/explore'}
             className="p-px w-7 h-7"
@@ -26,7 +26,7 @@ const Footer: FC = () => {
         </a>
       </Link>
       <Link href="/communities">
-        <a className="w-1/4 flex items-center justify-center p-3">
+        <a className="flex items-center justify-center w-1/4 p-3">
           <CommunitiesIcon
             isActive={pathname === '/communities'}
             className="p-px w-7 h-7"
@@ -34,7 +34,7 @@ const Footer: FC = () => {
         </a>
       </Link>
       <Link href="/notifications">
-        <a className="w-1/4 flex items-center justify-center p-3">
+        <a className="flex items-center justify-center w-1/4 p-3">
           <NotificationIcon
             isActive={pathname === '/notifications'}
             className="p-px w-7 h-7"
@@ -42,7 +42,7 @@ const Footer: FC = () => {
         </a>
       </Link>
       <Link href="/messages">
-        <a className="w-1/4 flex items-center justify-center p-3">
+        <a className="flex items-center justify-center w-1/4 p-3">
           <DMIcon
             isActive={pathname === '/messages'}
             className="p-px w-7 h-7 active:bg-slate-300"
