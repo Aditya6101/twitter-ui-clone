@@ -7,7 +7,7 @@ const Header: FC = () => {
   const title = pathname.split('/').slice(-1)[0];
 
   return (
-    <header className="flex items-center justify-between w-full px-4 py-3 border-b">
+    <header className="flex items-center justify-between w-full px-4 py-3 bg-white border-b fixed z-10 backdrop-blur-md bg-opacity-80 top-0 left-0">
       <Image
         className="rounded-full"
         src="https://pbs.twimg.com/profile_images/1480428367644004353/rR3pFvNU_400x400.jpg"
