@@ -5,4 +5,7 @@ type Tweet = {
   name: string;
   tweet_at: Date;
   tweet: string;
+  replies: number;
+  rts: number;
+  likes: number;
 };
