@@ -1,5 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { randUser, randPhrase, randRecentDate } from '@ngneat/falso';
+import {
+  randUser,
+  randPhrase,
+  randRecentDate,
+  randNumber,
+} from '@ngneat/falso';
 
 type Tweet = {
   id: string;
@@ -8,6 +13,9 @@ type Tweet = {
   name: string;
   tweet_at: Date;
   tweet: string;
+  replies: number;
+  rts: number;
+  likes: number;
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -23,6 +31,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       name: `${randUser().firstName} ${randUser().lastName}`,
       tweet_at: randRecentDate(),
       tweet: randPhrase(),
+      replies: +(randNumber() / 10000).toFixed(0),
+      rts: +(randNumber() / 1000).toFixed(0),
+      likes: +(randNumber() / 100).toFixed(0),
     };
     tweets.push(tweet);
   }
