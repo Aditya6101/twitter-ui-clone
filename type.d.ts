@@ -1,10 +1,10 @@
 type Tweet = {
   id: string;
+  userId: string;
+  avatar: string;
   username: string;
-  profile_pic: string;
-  name: string;
-  tweet_at: Date;
-  tweet: string;
+  date: Date;
+  text: string;
   replies: number;
   rts: number;
   likes: number;

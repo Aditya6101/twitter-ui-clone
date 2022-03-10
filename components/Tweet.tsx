@@ -10,9 +10,9 @@ type Props = {
 const Tweet: FC<Props> = ({ tweet }) => {
   return (
     <div className="flex items-start px-4 py-3 border-b border-gray-200">
-      {/* Profile pic */}
+      {/* Avatar */}
       <Image
-        src={tweet.profile_pic}
+        src={tweet.avatar}
         alt="profile_pic"
         height={40}
         width={40}
@@ -23,23 +23,23 @@ const Tweet: FC<Props> = ({ tweet }) => {
         {/* Tweet header */}
         <p className="text-sm flex">
           <span className="truncate">
-            <span className="font-bold text-black">{tweet.name}</span>{' '}
+            <span className="font-bold text-black">{tweet.username}</span>{' '}
             <span className="pl-1 text-gray-500 font-semibold">
-              @{tweet.username}
+              @{tweet.userId}
             </span>
           </span>
           <span className="flex-shrink-0 text-gray-500">
             <span className="px-1 font-bold">·</span>
             <span className="font-semibold">
-              {format(parseISO(tweet.tweet_at.toLocaleString()), 'MMM d')}
+              {format(parseISO(tweet.date.toLocaleString()), 'MMM d')}
             </span>
           </span>
           <span className="text-right flex-1 flex justify-end ml-1">
             <Dots />
           </span>
         </p>
-        {/* Tweet */}
-        <p className="text-base">{tweet.tweet}</p>
+        {/* Tweet text */}
+        <p className="text-base">{tweet.text}</p>
         <IconBar />
       </div>
     </div>

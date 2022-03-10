@@ -8,11 +8,11 @@ import {
 
 type Tweet = {
   id: string;
+  userId: string;
+  avatar: string;
   username: string;
-  profile_pic: string;
-  name: string;
-  tweet_at: Date;
-  tweet: string;
+  date: Date;
+  text: string;
   replies: number;
   rts: number;
   likes: number;
@@ -26,11 +26,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   for (let i = 0; i < tweetsLimit; i++) {
     const tweet: Tweet = {
       id: randUser().id,
-      username: randUser().username,
-      profile_pic: randUser().img,
-      name: `${randUser().firstName} ${randUser().lastName}`,
-      tweet_at: randRecentDate(),
-      tweet: randPhrase(),
+      userId: randUser().username,
+      avatar: randUser().img,
+      username: `${randUser().firstName} ${randUser().lastName}`,
+      date: randRecentDate(),
+      text: randPhrase(),
       replies: +(randNumber() / 10000).toFixed(0),
       rts: +(randNumber() / 1000).toFixed(0),
       likes: +(randNumber() / 100).toFixed(0),
