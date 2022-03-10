@@ -11,7 +11,7 @@ const Footer: FC = () => {
   const { pathname } = useRouter();
 
   return (
-    <footer className="flex items-center justify-between border-t">
+    <footer className="flex w-full items-center justify-between bg-white border-t fixed bottom-0 left-0">
       <Link href="/">
         <a className="flex items-center justify-center w-1/4 p-3">
           <HomeIcon isActive={pathname === '/'} className="p-px w-7 h-7" />

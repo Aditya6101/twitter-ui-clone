@@ -10,7 +10,7 @@ type Props = {
 
 const Tweet: FC<Props> = ({ tweet }) => {
   return (
-    <div className="flex items-start px-4 py-3 border-b border-gray-200">
+    <article className="flex items-start px-4 py-3 border-b border-gray-200">
       {/* Avatar */}
       <Image
         src={tweet.avatar}
@@ -47,7 +47,7 @@ const Tweet: FC<Props> = ({ tweet }) => {
         {/* Tweet icon bar */}
         <IconBar replies={tweet.replies} rts={tweet.rts} likes={tweet.likes} />
       </div>
-    </div>
+    </article>
   );
 };
 
