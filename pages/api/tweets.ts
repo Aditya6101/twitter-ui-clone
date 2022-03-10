@@ -27,13 +27,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const tweet: Tweet = {
       id: randUser().id,
       userId: randUser().username,
-      avatar: randUser().img,
+      avatar: randUser().img + i,
       username: `${randUser().firstName} ${randUser().lastName}`,
       date: randRecentDate(),
       text: randPhrase(),
       replies: +(randNumber() / 10000).toFixed(0),
-      rts: +(randNumber() / 1000).toFixed(0),
-      likes: +(randNumber() / 100).toFixed(0),
+      rts: +(randNumber() / 10000).toFixed(0),
+      likes: +(randNumber() / 1000).toFixed(0),
     };
     tweets.push(tweet);
   }

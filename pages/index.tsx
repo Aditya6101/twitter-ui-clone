@@ -1,15 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import useSWR from 'swr';
+import Spinner from '../components/Spinner';
 import Tweet from '../components/Tweet';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Home: NextPage = () => {
-  const { data, error } = useSWR<Tweet[]>('/api/tweets?limit=20', fetcher);
+  const { data, error } = useSWR<Tweet[]>('/api/tweets?limit=50', fetcher);
 
   if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (!data) return <Spinner />;
 
   return (
     <div>
